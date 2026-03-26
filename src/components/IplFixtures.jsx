@@ -49,7 +49,7 @@ const IplFixtures = () => {
 
       {/* Fixtures Timeline */}
       <div className="relative max-w-[1000px] mx-auto w-full mt-4 md:mt-6 px-4 md:px-0">
-        {FIXTURES_DATA.map((match, index) => (
+        {FIXTURES_DATA.map((match) => (
           <div key={match.id} className="flex flex-col md:flex-row gap-6 md:gap-10 relative mb-6 group">
             
             {/* Left Timeline Info */}
