@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@theme {
+  --color-crick-blue: #c5a564;
+  --color-crick-dark: #0f172a;
+  --color-crick-gray: #f8fafc;
+  --color-crick-accent: #ffb800;
+  --color-background: #ffffff;
+
+  /* Navbar Specific Colors */
+  --color-navbar-bg: #ffffff;
+  --color-navbar-border: #f1f5f9;
+  --color-navbar-text: #475569;
+  --color-navbar-hover: #c5a564;
+
+  /* Footer Specific Colors */
+  --color-footer-bg: #c5a564;
+  --color-footer-text: #1e293b;
+  --color-footer-headline: #0f172a;
+  --color-footer-border: rgba(0, 0, 0, 0.05);
+}
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-900 font-sans antialiased;
+  }
+}
+
+@layer components {
+  /* Navbar Premium Styles */
+  .nav-wrapper {
+    background-color: var(--color-navbar-bg);
+    border-bottom: 1px solid var(--color-navbar-border);
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.05);
+  }
+
+  .nav-link {
+    color: var(--color-navbar-text);
+    font-size: 10px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 4px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .nav-link:hover {
+    color: var(--color-navbar-hover);
+    border-color: var(--color-navbar-hover);
+  }
+
+  .nav-icon-btn {
+    color: var(--color-navbar-text);
+    padding: 8px;
+    border-radius: 9999px;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .nav-icon-btn:hover {
+    background-color: #f8fafc;
+    color: var(--color-navbar-hover);
+  }
+
+  .nav-top {
+    @apply bg-white border-b border-slate-100 px-4 py-2 flex items-center justify-between text-slate-800 shadow-sm;
+  }
+  
+  .nav-sub {
+    @apply bg-white/80 backdrop-blur-md border-b border-slate-100 px-4 py-3 flex items-center gap-6 text-xs font-bold uppercase tracking-wider overflow-x-auto whitespace-nowrap text-slate-600;
+  }
+
+  .match-pill {
+    @apply px-4 py-1.5 rounded-full text-[11px] font-bold bg-slate-100 text-slate-600 hover:bg-slate-200 transition-colors whitespace-nowrap border border-slate-200;
+  }
+
+  .match-pill-active {
+    @apply bg-blue-100 text-blue-900 border border-blue-200;
+  }
+
+  .card-gradient {
+    @apply bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all;
+  }
+
+  /* Global Container for Spacing */
+  .crick-container {
+    @apply max-w-[1300px] mx-auto px-4 md:px-10;
+  }
+
+  /* Footer Premium Styles are controlled in their respective component now */
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+  }
+}
