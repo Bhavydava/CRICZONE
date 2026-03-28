@@ -82,9 +82,9 @@ const NewsSection = () => {
           </span>
         </div>
         <h2 className="text-[2.5rem] md:text-[3.5rem] font-black leading-[1.05] tracking-tight">
-          <span className="text-slate-800 dark:text-slate-100">The Global </span>
+          <span className="text-slate-800">The Global </span>
           <span className="text-crick-blue">Bulletin </span>
-          <span className="text-slate-800 dark:text-slate-100">Hub</span>
+          <span className="text-slate-800">Hub</span>
         </h2>
       </div>
 
@@ -95,10 +95,10 @@ const NewsSection = () => {
           {/* Header */}
           <div className="flex items-center gap-3 px-1 mb-1 md:mb-2">
             <div className="w-2 h-2 bg-crick-blue rounded-full shadow-[0_0_8px_rgba(197,165,100,0.6)]" />
-            <h3 className="font-black text-[12px] md:text-[13px] uppercase tracking-[0.2em] md:tracking-[0.25em] text-slate-800 dark:text-white">LATEST NEWS</h3>
+            <h3 className="font-black text-[12px] md:text-[13px] uppercase tracking-[0.2em] md:tracking-[0.25em] text-slate-800">LATEST NEWS</h3>
           </div>
 
-          <div className="relative group overflow-hidden rounded-[2rem] md:rounded-[2.5rem] h-[500px] md:h-full md:min-h-[550px] flex flex-col justify-end p-6 md:p-14 shadow-sm border border-slate-100 dark:border-slate-800">
+          <div className="relative group overflow-hidden rounded-[2rem] md:rounded-[2.5rem] h-[500px] md:h-full md:min-h-[550px] flex flex-col justify-end p-6 md:p-14 shadow-sm border border-slate-100">
             {/* Background Image */}
             <img 
               src={HEADLINE_STORY.image} 
@@ -148,13 +148,13 @@ const NewsSection = () => {
           {/* Header */}
           <div className="flex items-center gap-3 px-1 mb-1 md:mb-2">
             <div className="w-2 h-2 bg-crick-blue rounded-full shadow-[0_0_8px_rgba(197,165,100,0.6)]" />
-            <h3 className="font-black text-[12px] md:text-[13px] uppercase tracking-[0.2em] md:tracking-[0.25em] text-slate-800 dark:text-white">ESSENTIAL READS</h3>
+            <h3 className="font-black text-[12px] md:text-[13px] uppercase tracking-[0.2em] md:tracking-[0.25em] text-slate-800">ESSENTIAL READS</h3>
           </div>
 
           {/* List */}
           <div className="flex flex-col gap-4">
             {ESSENTIAL_READS.map((read) => (
-              <div key={read.id} className="bg-white dark:bg-[#0f172a] border border-slate-100 dark:border-slate-800 rounded-[1.25rem] md:rounded-[1.5rem] p-3 md:p-4 flex items-center gap-4 md:gap-5 hover:border-crick-blue/40 dark:hover:border-crick-blue/40 transition-all cursor-pointer group shadow-sm hover:shadow-md">
+              <div key={read.id} className="bg-white border border-slate-100 rounded-[1.25rem] md:rounded-[1.5rem] p-3 md:p-4 flex items-center gap-4 md:gap-5 hover:border-crick-blue/40 transition-all cursor-pointer group shadow-sm hover:shadow-md">
                 {/* Image */}
                 <div className="w-24 h-16 md:w-32 md:h-24 rounded-xl md:rounded-2xl overflow-hidden flex-shrink-0 relative">
                   <img src={read.image} alt={read.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
@@ -165,10 +165,10 @@ const NewsSection = () => {
                 <div className="flex flex-col gap-2 md:gap-2.5 flex-1 py-1">
                   <div className="flex text-[9px] md:text-[10px] font-black uppercase tracking-[0.1em] md:tracking-[0.15em] text-slate-400 gap-2 items-center">
                     <span className="text-crick-blue shrink-0">{read.timeAgo}</span>
-                    <span className="text-slate-300 dark:text-slate-600 shrink-0">•</span>
+                    <span className="text-slate-300 shrink-0">•</span>
                     <span className="truncate">{read.category}</span>
                   </div>
-                  <h4 className="text-[13px] md:text-[15px] font-bold text-slate-700 dark:text-slate-200 leading-snug group-hover:text-crick-blue dark:group-hover:text-crick-blue transition-colors line-clamp-2 md:line-clamp-none">
+                  <h4 className="text-[13px] md:text-[15px] font-bold text-slate-700 leading-snug group-hover:text-crick-blue transition-colors line-clamp-2 md:line-clamp-none">
                     {read.title}
                   </h4>
                 </div>
@@ -187,8 +187,8 @@ const NewsSection = () => {
       {/* Extended Bulletin Section */}
       <div className="flex flex-col gap-8 md:gap-10 mt-4 md:mt-8">
         <div className="flex flex-col gap-1.5 px-2 md:px-0">
-          <h2 className="text-3xl md:text-[2.25rem] font-black text-slate-800 dark:text-white tracking-tight">Extended Bulletin</h2>
-          <p className="text-[10px] md:text-[11px] font-black uppercase tracking-[0.25em] text-slate-400 dark:text-slate-500">
+          <h2 className="text-3xl md:text-[2.25rem] font-black text-slate-800 tracking-tight">Extended Bulletin</h2>
+          <p className="text-[10px] md:text-[11px] font-black uppercase tracking-[0.25em] text-slate-400">
             DEEP COVERAGE FROM ALL FORMATS
           </p>
         </div>
@@ -208,7 +208,7 @@ const NewsSection = () => {
                   <Clock size={14} className="opacity-90" />
                   <span>{item.timeAgo}</span>
                 </div>
-                <h3 className="text-xl md:text-[1.35rem] font-black text-slate-800 dark:text-white leading-[1.25] group-hover:text-crick-blue dark:group-hover:text-crick-blue transition-colors line-clamp-3">
+                <h3 className="text-xl md:text-[1.35rem] font-black text-slate-800 leading-[1.25] group-hover:text-crick-blue transition-colors line-clamp-3">
                   {item.title}
                 </h3>
               </div>

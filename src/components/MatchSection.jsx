@@ -61,8 +61,8 @@ const MatchSection = () => {
       
       {/* Section Header */}
       <div className="flex flex-col gap-1.5 px-4 md:px-0">
-        <h2 className="text-3xl md:text-[2.25rem] font-black text-[#0f172a] dark:text-white tracking-tight">Match Fixtures</h2>
-        <p className="text-[10px] md:text-[11px] font-black uppercase tracking-[0.2em] md:tracking-[0.25em] text-[#0f172a]/40 dark:text-slate-500 max-w-xl">
+        <h2 className="text-3xl md:text-[2.25rem] font-black text-[#0f172a] tracking-tight">Match Fixtures</h2>
+        <p className="text-[10px] md:text-[11px] font-black uppercase tracking-[0.2em] md:tracking-[0.25em] text-[#0f172a]/40 max-w-xl">
           The most anticipated upcoming global fixtures dynamically loaded
         </p>
       </div>

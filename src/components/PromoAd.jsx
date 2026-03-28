@@ -5,7 +5,7 @@ const PromoAd = () => {
   return (
     <div className="w-full relative z-10 py-6 md:py-8">
       <div className="crick-container px-0 md:px-6 lg:px-0" >
-        <div className="relative w-full rounded-[1.5rem] md:rounded-[2rem] overflow-hidden bg-[#161c2d] dark:bg-slate-900 border border-slate-800/50 hover:border-crick-blue/30 transition-all flex items-center justify-between px-6 py-8 md:px-12 md:py-10 cursor-pointer group shadow-sm hover:shadow-md">
+        <div className="relative w-full rounded-[1.5rem] md:rounded-[2rem] overflow-hidden bg-[#161c2d] border border-slate-800/50 hover:border-crick-blue/30 transition-all flex items-center justify-between px-6 py-8 md:px-12 md:py-10 cursor-pointer group shadow-sm hover:shadow-md">
           
           {/* Decorative Elements */}
           <div className="absolute top-0 right-0 w-64 h-full bg-gradient-to-l from-crick-blue/10 to-transparent pointer-events-none" />
