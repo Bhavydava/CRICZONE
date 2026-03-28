@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Calendar, Clock, MapPin, ChevronRight } from 'lucide-react';
 
 const FIXTURES_DATA = [
@@ -33,7 +34,7 @@ const FIXTURES_DATA = [
 
 const IplFixtures = () => {
   return (
-    <div className="crick-container flex flex-col gap-10 pt-10 pb-8 relative z-10 w-full">
+    <div id="ipl-fixtures" className="crick-container flex flex-col gap-10 pt-10 pb-8 relative z-10 w-full">
       {/* Centered Header */}
       <div className="flex flex-col items-center justify-center gap-3 text-center px-4 md:px-0 mt-4 md:mt-8">
         <div className="flex items-center gap-3">
@@ -111,10 +112,13 @@ const IplFixtures = () => {
                  </div>
 
                  {/* Match Centre Button */}
-                 <button className="w-full md:w-auto mt-2 md:mt-0 bg-crick-blue hover:opacity-90 text-white px-5 py-2.5 rounded-lg flex items-center justify-center gap-2 text-[10px] md:text-[11px] font-black uppercase tracking-widest transition-opacity shrink-0 shadow-sm shadow-crick-blue/20">
+                 <Link 
+                   to={`/match/${match.id}`}
+                   className="w-full md:w-auto mt-2 md:mt-0 bg-crick-blue hover:opacity-90 text-white px-5 py-2.5 rounded-lg flex items-center justify-center gap-2 text-[10px] md:text-[11px] font-black uppercase tracking-widest transition-opacity shrink-0 shadow-sm shadow-crick-blue/20 no-underline"
+                 >
                     MATCH CENTRE
                     <ChevronRight size={14} className="opacity-80" />
-                 </button>
+                 </Link>
 
                </div>
             </div>

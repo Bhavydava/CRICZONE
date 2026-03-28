@@ -1,77 +1,13 @@
 import React from 'react';
 import { Clock, Flame, ChevronRight } from 'lucide-react';
-import featuredNewsImg from '../assets/featured_news.png';
-import matchActionImg from '../assets/match_action.png';
-import stadiumViewImg from '../assets/stadium_view.png';
+import { Link } from 'react-router-dom';
 import SidebarAd from './SidebarAd';
 import PromoAd from './PromoAd';
-
-const HEADLINE_STORY = {
-  title: "SRH aim for the stars in pursuit of second IPL title",
-  subtitle: "A batting-heavy SRH are set to resume their six-hitting spree, still chasing a second title a decade after their first, but not without encumbrances elsewhere...",
-  timeAgo: "3H AGO",
-  category: "IPL 2026",
-  image: featuredNewsImg,
-};
-
-const ESSENTIAL_READS = [
-  {
-    id: 1,
-    title: "Pat Cummins targeting 'back-to-back' IPL glory",
-    timeAgo: "4H AGO",
-    category: "IPL 2026",
-    image: matchActionImg,
-  },
-  {
-    id: 2,
-    title: "RCB's new reality: A star on the frontlines...",
-    timeAgo: "5H AGO",
-    category: "IPL 2026 • TEAM PREVIEW",
-    image: stadiumViewImg,
-  },
-  {
-    id: 3,
-    title: "Captains cautioned about slow over rates in 2026",
-    timeAgo: "17H AGO",
-    category: "IPL 2026",
-    image: featuredNewsImg,
-  },
-  {
-    id: 4,
-    title: "KKR rope in mystery spinner ahead of opener",
-    timeAgo: "18H AGO",
-    category: "IPL 2026",
-    image: matchActionImg,
-  }
-];
-
-const EXTENDED_BULLETIN_DATA = [
-  {
-    id: 1,
-    title: "Kolkata Knight Riders: A rebuild reliant on availability and...",
-    timeAgo: "20H AGO",
-    category: "IPL 2026",
-    image: featuredNewsImg,
-  },
-  {
-    id: 2,
-    title: "Connor Esterhuizen takes his chance",
-    timeAgo: "22H AGO",
-    category: "SOUTH AFRICA TOUR OF NEW ZEALAND, 2026",
-    image: matchActionImg,
-  },
-  {
-    id: 3,
-    title: "Mumbai Indians: #6 in 2026?",
-    timeAgo: "22H AGO",
-    category: "IPL 2026",
-    image: stadiumViewImg,
-  }
-];
+import { HEADLINE_STORY, ESSENTIAL_READS, EXTENDED_BULLETIN_DATA } from '../data/newsData';
 
 const NewsSection = () => {
   return (
-    <div className="crick-container flex flex-col gap-8 md:gap-12 mb-20 relative z-10">
+    <div id="news-section" className="crick-container flex flex-col gap-8 md:gap-12 mb-20 relative z-10">
       
       {/* Main Section Header */}
       <div className="flex flex-col gap-3 md:gap-4 px-0 md:px-0 mt-4 md:mt-8">
@@ -98,7 +34,7 @@ const NewsSection = () => {
             <h3 className="font-black text-[12px] md:text-[13px] uppercase tracking-[0.2em] md:tracking-[0.25em] text-slate-800">LATEST NEWS</h3>
           </div>
 
-          <div className="relative group overflow-hidden rounded-[2rem] md:rounded-[2.5rem] h-[500px] md:h-full md:min-h-[550px] flex flex-col justify-end p-6 md:p-14 shadow-sm border border-slate-100">
+          <Link to={`/news/${HEADLINE_STORY.id}`} className="relative group overflow-hidden rounded-[2rem] md:rounded-[2.5rem] h-[500px] md:h-full md:min-h-[550px] flex flex-col justify-end p-6 md:p-14 shadow-sm border border-slate-100 cursor-pointer block">
             {/* Background Image */}
             <img 
               src={HEADLINE_STORY.image} 
@@ -135,12 +71,12 @@ const NewsSection = () => {
               </p>
 
               {/* Button */}
-              <button className="mt-2 md:mt-4 bg-crick-blue hover:bg-crick-blue/90 hover:-translate-y-1 text-white px-6 md:px-7 py-3 md:py-4 rounded-full font-black text-[11px] md:text-xs uppercase tracking-widest transition-all shadow-lg shadow-crick-blue/20 flex items-center gap-2 group/btn">
+              <div className="mt-2 md:mt-4 bg-crick-blue group-hover:bg-crick-blue/90 group-hover:-translate-y-1 text-white px-6 md:px-7 py-3 md:py-4 rounded-full font-black text-[11px] md:text-xs uppercase tracking-widest transition-all shadow-lg shadow-crick-blue/20 flex items-center gap-2 group/btn">
                 READ ENTIRE INSIGHT
                 <ChevronRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
-              </button>
+              </div>
             </div>
-          </div>
+          </Link>
         </div>
 
         {/* Right: Essential Reads */}
@@ -154,7 +90,7 @@ const NewsSection = () => {
           {/* List */}
           <div className="flex flex-col gap-4">
             {ESSENTIAL_READS.map((read) => (
-              <div key={read.id} className="bg-white border border-slate-100 rounded-[1.25rem] md:rounded-[1.5rem] p-3 md:p-4 flex items-center gap-4 md:gap-5 hover:border-crick-blue/40 transition-all cursor-pointer group shadow-sm hover:shadow-md">
+              <Link to={`/news/${read.id}`} key={read.id} className="bg-white border border-slate-100 rounded-[1.25rem] md:rounded-[1.5rem] p-3 md:p-4 flex items-center gap-4 md:gap-5 hover:border-crick-blue/40 transition-all cursor-pointer group shadow-sm hover:shadow-md">
                 {/* Image */}
                 <div className="w-24 h-16 md:w-32 md:h-24 rounded-xl md:rounded-2xl overflow-hidden flex-shrink-0 relative">
                   <img src={read.image} alt={read.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
@@ -172,7 +108,7 @@ const NewsSection = () => {
                     {read.title}
                   </h4>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
 
@@ -195,7 +131,7 @@ const NewsSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {EXTENDED_BULLETIN_DATA.map((item) => (
-            <div key={item.id} className="flex flex-col gap-4 md:gap-5 group cursor-pointer">
+            <Link to={`/news/${item.id}`} key={item.id} className="flex flex-col gap-4 md:gap-5 group cursor-pointer">
               <div className="relative aspect-[16/10] rounded-[1.5rem] md:rounded-[2rem] overflow-hidden shadow-sm">
                 <img src={item.image} alt={item.title} className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                 <div className="absolute top-4 md:top-5 left-4 md:left-5 bg-black/80 backdrop-blur-md px-3.5 py-1.5 rounded-full z-10 border border-white/10">
@@ -212,7 +148,7 @@ const NewsSection = () => {
                   {item.title}
                 </h3>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

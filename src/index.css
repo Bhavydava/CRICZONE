@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 @theme {
   --color-crick-blue: #c5a564;
   --color-crick-dark: #0f172a;

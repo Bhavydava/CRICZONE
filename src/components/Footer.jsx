@@ -1,4 +1,4 @@
-import React from 'react';
+import { Link } from 'react-router-dom';
 import { Facebook, Twitter, Instagram, Linkedin, Youtube, Send, ArrowUp, MessageCircle } from 'lucide-react';
 import Logo from '../assets/Footer_Logo.png'; 
 import BackToTop from './BackToTop';
@@ -154,13 +154,31 @@ const Footer = () => {
              
              {/* Bottom Menu Links */}
              <ul className="flex flex-wrap justify-center lg:justify-end gap-x-5 gap-y-3 max-w-2xl px-4 lg:px-0">
-               {FOOTER_DATA.bottomLinks.map((link, i) => (
-                 <li key={i}>
-                   <a href={link.href} className="text-[11px] font-black text-slate-900 hover:text-black uppercase tracking-widest transition-colors mb-1">
-                     {link.name}
-                   </a>
-                 </li>
-               ))}
+                {FOOTER_DATA.bottomLinks.map((link, i) => {
+                  const internalRoutes = {
+                    "ABOUT": "/about",
+                    "CONTACT": "/contact",
+                    "ADVERTISE WITH US": "/advertise",
+                    "FEEDBACK": "/feedback",
+                    "WRITE FOR US": "/write-for-us",
+                    "DMCA": "/dmca",
+                    "DISCLAIMER": "/disclaimer"
+                  };
+                  
+                  return (
+                    <li key={i}>
+                      {internalRoutes[link.name] ? (
+                        <Link to={internalRoutes[link.name]} className="text-[11px] font-black text-slate-900 hover:text-black uppercase tracking-widest transition-colors mb-1">
+                          {link.name}
+                        </Link>
+                      ) : (
+                        <a href={link.href} className="text-[11px] font-black text-slate-900 hover:text-black uppercase tracking-widest transition-colors mb-1">
+                          {link.name}
+                        </a>
+                      )}
+                    </li>
+                  );
+                })}
              </ul>
           </div>
         </div>
@@ -171,11 +189,25 @@ const Footer = () => {
             © 2013 - {new Date().getFullYear()} CRICZONE All rights reserved.
           </p>
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
-            {FOOTER_DATA.legalLinks.map((link, i) => (
-               <a key={i} href={link.href} className="text-[11px] font-semibold text-slate-800 hover:text-black transition-colors">
-                 {link.name}
-               </a>
-            ))}
+            {FOOTER_DATA.legalLinks.map((link, i) => {
+               const legalRoutes = {
+                 "Terms and Conditions": "/terms",
+                 "Privacy Policy": "/privacy-policy",
+                 "Copyrights Notice": "/copyrights"
+               };
+               
+               return (
+                  legalRoutes[link.name] ? (
+                    <Link key={i} to={legalRoutes[link.name]} className="text-[11px] font-semibold text-slate-800 hover:text-black transition-colors">
+                      {link.name}
+                    </Link>
+                  ) : (
+                    <a key={i} href={link.href} className="text-[11px] font-semibold text-slate-800 hover:text-black transition-colors">
+                      {link.name}
+                    </a>
+                  )
+               );
+            })}
           </div>
         </div>
 

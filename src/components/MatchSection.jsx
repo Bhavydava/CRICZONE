@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
 
 /* 
@@ -19,16 +20,16 @@ const CATEGORIES = ["ALL MATCHES (9)"];
 
 const MatchCard = ({ match }) => {
   return (
-    <div className="flex-none w-[340px] md:w-[360px] bg-white border border-slate-100 rounded-xl p-5 hover:border-crick-blue/30 transition-all group cursor-pointer shadow-sm hover:shadow-md">
+    <Link to="/match/1" className="flex-none w-[340px] md:w-[360px] bg-white border border-slate-100 rounded-xl p-5 hover:border-crick-blue/30 transition-all group cursor-pointer shadow-sm hover:shadow-md block no-underline">
       <div className="flex flex-col gap-6">
         <div className="flex items-center justify-between">
           <div className="flex flex-col">
              <span className="text-[10px] font-black uppercase tracking-widest text-slate-500">{match.status}</span>
              <span className="text-[11px] font-bold text-slate-500">{match.series}</span>
           </div>
-          <div className="flex gap-2">
-            <button className="text-[9px] font-black px-2 py-0.5 border border-slate-100 rounded hover:bg-slate-50 transition-colors uppercase text-slate-400">FIXTURES</button>
-            <button className="text-[9px] font-black px-2 py-0.5 border border-slate-100 rounded hover:bg-slate-50 transition-colors uppercase text-slate-400">STANDINGS</button>
+          <div className="flex gap-2 text-slate-400">
+            <div className="text-[9px] font-black px-2 py-0.5 border border-slate-100 rounded hover:bg-slate-50 transition-colors uppercase">FIXTURES</div>
+            <div className="text-[9px] font-black px-2 py-0.5 border border-slate-100 rounded hover:bg-slate-50 transition-colors uppercase">STANDINGS</div>
           </div>
         </div>
 
@@ -48,10 +49,10 @@ const MatchCard = ({ match }) => {
 
         <div className="flex items-center justify-between text-[10px] font-bold text-[#0f172a]/50 border-t border-slate-50 pt-4">
           <span>{match.date}</span>
-          <button className="text-crick-blue font-black tracking-widest uppercase hover:opacity-80 transition-all">FANTASY TIPS</button>
+          <span className="text-crick-blue font-black tracking-widest uppercase hover:opacity-80 transition-all">MATCH CENTRE</span>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
